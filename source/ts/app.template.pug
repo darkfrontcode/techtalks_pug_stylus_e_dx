@@ -1,0 +1,14 @@
+// #random-friend>(header>h1{Random Friend})+(section>(#image-wrapper>img)+(#display>span{your friend is:}+span{Ueslei Safadão})+(#button-wrapper>button{Sort a friend}+button{Try again}))
+
+#random-friend
+	header
+		h1 Random Friend
+	section
+		#image-wrapper
+			img(:src="friend.url")
+		#display(v-if="check")
+			span.title-secondary your friend is:
+			span.title-primary {{ friend.name }}
+		#button-wrapper
+			button.button-primary(v-if="!check", @click="sort") Sort a friend
+			button.button-secondary(v-if="check", @click="unsort") Try again

@@ -40,7 +40,8 @@ export default <any>{
 			{
 				test: /\.styl$/,
 				use: [
-					'to-string-loader',
+					// 'to-string-loader',
+					'style-loader',
 					'css-loader?importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
 					'postcss-loader',
 					'stylus-loader'

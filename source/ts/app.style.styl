@@ -1,0 +1,166 @@
+/* ==========================================================================
+   -- Colors
+   ========================================================================== */
+
+// Purple
+$color-purple-primary 	= #4B54DF
+
+// Green
+$color-green-primary 	= #08C9D8
+$color-green-secondary 	= #50F2FF
+
+// Pink
+$color-pink-primary 	= #FC6C8A
+
+/* ==========================================================================
+   -- Titles
+   ========================================================================== */
+
+title-base()
+	font-weight normal
+	margin 0
+	padding 0
+
+title-white()
+	color white
+	display flex
+	justify-content center
+
+title-primary()
+	title-base()
+	title-white()
+	font-size 40px
+	
+title-secondary()
+	title-base()
+	title-white()
+	font-size 20px
+
+.title-primary
+	title-primary()
+	
+.title-secondary
+	title-secondary()
+
+/* ==========================================================================
+   -- Buttons
+   ========================================================================== */
+
+button-base()
+	font-family 'Lobster', cursive
+	margin 0
+	padding 0
+	border 0
+
+button-rounded()
+	button-base()
+	title-secondary()
+	position relative
+	transition background-color .25s
+	display flex
+	flex-grow 1
+	flex-shrink 0
+	justify-content center
+	height 55px
+	color white
+	text-align center
+	margin auto
+	border-radius 36px
+	text-shadow 0 2px 0 alpha(black, .2)
+	box-shadow inset 0 -4px 0 0 alpha(black, .2), 0 4px 0 0 alpha(black, .2)
+	cursor pointer
+	
+	&:hover
+		box-shadow inset 0 -2px 0 0 alpha(black, .2), 0 2px 0 0 alpha(black, .2)
+		top 2px
+	
+button-primary()
+	button-rounded()
+	background-color $color-green-primary
+	
+	&:hover
+		background-color lighten($color-green-primary, 10%)
+	
+button-secondary()
+	button-rounded()
+	background-color $color-pink-primary
+	
+	&:hover
+		background-color lighten($color-pink-primary, 10%)
+
+.button-primary
+	button-primary()
+	
+.button-secondary
+	button-secondary()
+
+/* ==========================================================================
+   -- Common
+   ========================================================================== */
+
+
+html
+	height 100%
+
+body
+	min-height 100%
+	font-family 'Lobster', cursive
+	background $color-purple-primary
+	display flex
+	flex-direction column
+	justify-content center
+	margin 0
+	padding 0
+	
+/* ==========================================================================
+   -- Header
+   ========================================================================== */
+   
+header
+	display flex
+	flex-shrink 0
+	height 116px
+	background alpha(black, .1)
+	display flex
+	justify-content center
+	align-items center
+	
+	h1
+		title-primary()
+		color $color-green-secondary
+		
+/* ==========================================================================
+   -- Section
+   ========================================================================== */
+
+#random-friend
+	display flex
+	flex-direction column
+	flex-grow 1
+	
+	section
+		display flex
+		flex-direction column
+		justify-content space-evenly
+		flex-grow 1
+		box-sizing border-box
+		padding 50px
+		
+		#image-wrapper
+			width 180px
+			height @width
+			overflow hidden
+			border-radius 50%
+			display flex
+			flex-direction row
+			justify-content center
+			align-self center
+			
+			img
+				width 100%
+				object-fit cover
+		
+		#button-wrapper
+			display flex
+			flex-direction row
+			justify-content center
