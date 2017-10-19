@@ -3,6 +3,7 @@ import * as path 				from 'path'
 import * as webpack 			from 'webpack'
 import * as HtmlWebpackPlugin	from 'html-webpack-plugin'
 import * as merge  				from 'webpack-merge'
+import * as copy 				from 'copy-webpack-plugin'
 import common					from './common'
 
 const polyfill = 'eventsource-polyfill'
@@ -40,7 +41,14 @@ export default merge(common, <any>{
 			template: path.join(__dirname, "../pug/template.pug"),
 			filename: 'index.html',
 			inject: true
-		})
+		}),
+
+		new copy([
+			{
+				from: path.join(__dirname, '../assets'), 
+				to: path.join(__dirname, '../../public/assets')
+			}
+		])
 
 	]
 

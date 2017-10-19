@@ -11,4 +11,4 @@
 			span.title-primary {{ friend.name }}
 		#button-wrapper
 			button.button-primary(v-if="!check", @click="sort") Sort a friend
-			button.button-secondary(v-if="check", @click="unsort") Try again
+			button.button-secondary(v-else="check", @click="unsort") Try again

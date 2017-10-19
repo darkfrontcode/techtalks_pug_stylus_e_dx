@@ -29,10 +29,10 @@ export default class App extends Vue
 	public friend: IFriend = new Friend("Friend Avatar", "../assets/friend.png")
 
 	private friends = new Array<IFriend>(
-		new Friend("Wesley Safadão", "../assets/wesley_safadao.png"),
-		new Friend("Compadre Washington", "../assets/compadre_washington.jpg"),
-		new Friend("Nego do Borel", "../assets/nego_do_borel.jpg"),
-		new Friend("Sérgio Mallandro", "../assets/sergio_mallandro.jpg")
+		new Friend("Wesley Safadão", "assets/wesley_safadao.png"),
+		new Friend("Compadre Washington", "assets/compadre_washington.jpg"),
+		new Friend("Nego do Borel", "assets/nego_do_borel.jpg"),
+		new Friend("Sérgio Mallandro", "assets/sergio_mallandro.jpg")
 	)
 
 	public sort() : void
