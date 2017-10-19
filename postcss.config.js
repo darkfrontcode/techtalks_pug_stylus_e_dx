@@ -1,1 +1,10 @@
-module.exports = { plugins: [require('autoprefixer')] }
+module.exports = {
+	plugins: {
+		'postcss-import': {},
+		'postcss-cssnext': {
+			warnForDuplicates: false
+		},
+		'postcss-simple-vars': {},
+		'cssnano': {}
+	}
+}
