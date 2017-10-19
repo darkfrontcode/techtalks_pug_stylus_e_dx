@@ -3,5 +3,5 @@
 ### Description
 
 ```javascript
-// TODO: write a readme]
+// TODO: write a readme
 ```
