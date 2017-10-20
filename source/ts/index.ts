@@ -3,7 +3,6 @@ import Component from 'vue-class-component'
 import App from './app.component'
 
 new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App }
+	el: '#app',
+	render: h => h(App)
 })

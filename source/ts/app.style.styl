@@ -51,6 +51,9 @@ button-base()
 	margin 0
 	padding 0
 	border 0
+	
+	&:focus
+		outline none
 
 button-rounded()
 	button-base()
@@ -130,10 +133,10 @@ header
 		color $color-green-secondary
 		
 /* ==========================================================================
-   -- Section
+   -- App-container
    ========================================================================== */
 
-#random-friend
+#app-container
 	display flex
 	flex-direction column
 	flex-grow 1
@@ -144,9 +147,9 @@ header
 		justify-content space-evenly
 		flex-grow 1
 		box-sizing border-box
-		padding 50px
+		padding 30px
 		
-		#image-wrapper
+		#image
 			width 180px
 			height @width
 			overflow hidden
@@ -159,8 +162,11 @@ header
 			img
 				width 100%
 				object-fit cover
+				
+		#text.hidden
+			visibility hidden
 		
-		#button-wrapper
+		#buttons
 			display flex
 			flex-direction row
 			justify-content center

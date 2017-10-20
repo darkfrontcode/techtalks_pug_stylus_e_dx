@@ -1,44 +1,23 @@
-import Vue, { ComponentOptions }  from 'vue'
-import Component from 'vue-class-component'
+import Vue, { ComponentOptions }  	from 'vue'
+import Component 					from 'vue-class-component'
+import IFriend 						from './friend.interface'
+import Friend 						from './friend.class'
+import friends, { avatar } 			from './friends.list'
 
-const Stylus = require('./app.style.styl')
-const template = require('./app.template.pug')()
-
-interface IFriend
-{
-	name: string
-	url: string
-}
-
-class Friend implements IFriend
-{
-	public name:string
-	public url:string
-
-	constructor(name:string, url:string)
-	{
-		this.name = name;
-		this.url = url;
-	}
-}
+const Stylus 	= require('./app.style.styl')
+const template 	= require('./app.template.pug')()
 
 @Component({ template })
 export default class App extends Vue
 {
-	public check: boolean = false
-	public friend: IFriend = new Friend("Friend Avatar", "../assets/friend.png")
+	public check: boolean 			= false
+	public friend: IFriend 			= avatar
+	private friends: Array<IFriend> = friends
 
-	private friends = new Array<IFriend>(
-		new Friend("Wesley Safadão", "assets/wesley_safadao.png"),
-		new Friend("Compadre Washington", "assets/compadre_washington.jpg"),
-		new Friend("Nego do Borel", "assets/nego_do_borel.jpg"),
-		new Friend("Sérgio Mallandro", "assets/sergio_mallandro.jpg")
-	)
-
-	public sort() : void
+	public shuffle() : void
 	{
 		const stage = this.clone(this.friend)
-		const key = this.rando()
+		const key = this.random()
 
 		this.friends = this.friends.filter((friend, index) => {
 			if(index != key) return friend 
@@ -46,26 +25,21 @@ export default class App extends Vue
 		})
 
 		this.friends.push(stage)
-		this.toogle()
 	}
 
-	public unsort() : void
+	public sort() : void
 	{
-		this.toogle()
+		this.shuffle()
+		this.check=!this.check
 	}
 
-	public clone(object:any) : any
+	public clone(friend:Friend) : Friend
 	{
-		return {...object}
+		return {...friend}
 	}
 
-	public rando() : number
+	public random() : number
 	{
 		return Math.floor(Math.random() * this.friends.length)
-	}
-
-	private toogle() : void
-	{
-		this.check=!this.check
 	}
 }
