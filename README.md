@@ -24,11 +24,11 @@ I started with Webpack module bundler, Typescript to maintain the scale, Vue for
 
 **Links:**
 
-Webpack => https://webpack.github.io/
-Typescript => https://www.typescriptlang.org/
-Vue => https://vuejs.org/
-Pug => https://pugjs.org/
-Stylus => http://stylus-lang.com/
+* Webpack => https://webpack.github.io/
+* Typescript => https://www.typescriptlang.org/
+* Vue => https://vuejs.org/
+* Pug => https://pugjs.org/
+* Stylus => http://stylus-lang.com/
 
 ### How to install
 
