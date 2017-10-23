@@ -4,10 +4,7 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"start": "nodemon --exec npm run dev",
-		"dev": "ts-node --cache-directory .tscache ./source/express/development.ts --colors",
-		"prod": "ts-node --fast ./source/express/prod.ts",
-		"test": "ts-node --cache-directory .tscache ./source/express/development.ts --colors"
+		"start": "ts-node --cache-directory .tscache ./source/express/development.ts --colors"
 	},
 	"dependencies": {
 		"@types/chalk": "^0.4.31",
