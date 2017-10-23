@@ -3,7 +3,8 @@
 ### Description
 A simple app that shuffles and picks some random and weird friend for you.
 
-<p align="center"> ![Alt Text](https://github.com/darkfrontcode/techtalks_pug_stylus_e_dx/blob/master/gif.gif) </p>
+<img align="left" width="100" height="100" src="https://github.com/darkfrontcode/techtalks_pug_stylus_e_dx/blob/master/gif.gif">
+![Alt Text](https://github.com/darkfrontcode/techtalks_pug_stylus_e_dx/blob/master/gif.gif) 
 
 ### General information
 
