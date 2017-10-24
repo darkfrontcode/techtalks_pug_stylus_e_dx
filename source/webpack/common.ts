@@ -6,7 +6,7 @@ export default <any>{
 	
 	entry: {
 
-		app: path.join(__dirname, '../ts/index.ts')
+		app: path.join(__dirname, '../vue/index.ts')
 		
 	},
 

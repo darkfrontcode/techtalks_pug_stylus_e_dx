@@ -1,0 +1,15 @@
+#container
+	header
+		h1 Random Friend
+
+	section(:class="isActive")
+		#image
+			img(:src="friend.url")
+
+		#text
+			span.title-secondary your friend is:
+			span.title-primary {{ friend.name }}
+
+		#buttons
+			button.button-primary(@click="start") Shuffle
+			button.button-secondary(@click="shuffle") Try again

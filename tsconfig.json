@@ -18,7 +18,7 @@
 	"allowSyntheticDefaultImports": true
 	},
 	"include": [
-		"source/ts/*.ts"
+		"source/vue/*.ts"
 	],
 	"exclude":[
 		"node_modules"

@@ -1,8 +1,7 @@
 import Vue, { ComponentOptions }  	from 'vue'
 import Component 					from 'vue-class-component'
-import IFriend 						from './friend.interface'
-import Friend 						from './friend.class'
-import friends, { avatar } 			from './friends.list'
+import Friend 						from '../../classes/friend.class'
+import friends, { avatar } 			from '../../classes/friends.list'
 
 const Stylus 	= require('./app.style.styl')
 const template 	= require('./app.template.pug')()
@@ -10,13 +9,18 @@ const template 	= require('./app.template.pug')()
 @Component({ template })
 export default class App extends Vue
 {
-	public check: boolean 			= false
-	public friend: IFriend 			= avatar
-	private friends: Array<IFriend> = friends
+	public active: boolean = false
+	public friend: Friend = avatar
+	private friends: Array<Friend> = friends
+
+	get isActive() : string
+	{
+		return this.active ? 'active' : ''
+	}
 
 	public shuffle() : void
 	{
-		const stage = this.clone(this.friend)
+		const stage = this.clone<Friend>(this.friend)
 		const key = this.random()
 
 		this.friends = this.friends.filter((friend, index) => {
@@ -27,19 +31,20 @@ export default class App extends Vue
 		this.friends.push(stage)
 	}
 
-	public sort() : void
+	public start() : void
 	{
 		this.shuffle()
-		this.check=!this.check
+		this.active = true
 	}
 
-	public clone(friend:Friend) : Friend
+	public clone<T>(friend:T) : T
 	{
-		return {...friend}
+		return <T>{...<any>friend}
 	}
 
 	public random() : number
 	{
 		return Math.floor(Math.random() * this.friends.length)
 	}
+
 }
