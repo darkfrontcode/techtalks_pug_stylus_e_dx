@@ -38,7 +38,9 @@ I started with Webpack module bundler, Typescript to maintain the scale, Vue for
 
 ### How to install
 
-* Install modules with **_yarn_** or **_npm_** install.
+* Install modules with **_yarn_** install.
+* **_Yarn_** => https://yarnpkg.com
+* Install _ts-node_ and _Typescript_ globally.
 * npm start to run the application.
 * Open your favorite browser in http://localhost:3000
 
